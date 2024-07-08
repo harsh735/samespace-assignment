@@ -1,0 +1,171 @@
+/* Todolist.css */
+
+body {
+    background: url('../../assets/bg-logo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #A4A6B3;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(18, 19, 75, 0);
+}
+
+.todo-form {
+    background-color: #2C2C38;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-form h1 {
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.form-group {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #3B3B47;
+    color: #FFFFFF;
+}
+
+.add-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6C63FF;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 200px;
+}
+
+.add-button:hover {
+    background-color: #5A54D1;
+}
+
+.button-group {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3B3B47;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.todo-list {
+    width: 838px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2C2C38;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #3B3B47;
+}
+
+th {
+    background-color: #2C2C38;
+    color: #FFFFFF;
+}
+
+td {
+    color: #A4A6B3;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-button, .complete-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #DC3545;
+    color: #FFFFFF;
+}
+
+.delete-button:hover {
+    background-color: #C82333;
+}
+
+.complete-button {
+    background-color: #28A745;
+    color: #FFFFFF;
+}
+
+.complete-button:hover {
+    background-color: #218838;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6C63FF;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #5A54D1;
+    cursor: not-allowed;
+}
