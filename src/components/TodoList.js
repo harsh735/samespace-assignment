@@ -46,7 +46,7 @@ const TodoList = () => {
                 return;
             }
 
-            await axios.post('http://localhost:8080/tasks', newTodo);
+            await axios.post('/api/tasks', newTodo);
             setNewTodo({ title: '', description: '', status: 'pending', user_id: 'user123' });
             fetchTodos();
         } catch (error) {
@@ -56,7 +56,7 @@ const TodoList = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/tasks/${id}?user_id=user123`);
+            await axios.delete(`/api/tasks/${id}?user_id=user123`);
             fetchTodos();
         } catch (error) {
             console.error('Error deleting todo:', error);
@@ -65,7 +65,7 @@ const TodoList = () => {
 
     const handleUpdate = async (id, updatedTodo) => {
         try {
-            await axios.put(`http://localhost:8080/tasks/${id}`, updatedTodo);
+            await axios.put(`/api/tasks/${id}`, updatedTodo);
             fetchTodos();
         } catch (error) {
             console.error('Error updating todo:', error);
