@@ -41,7 +41,7 @@ func main() {
 
 	username := os.Getenv("URI_USERNAME")
 	password := os.Getenv("URI_PASSWORD")
-	connectionURI := fmt.Sprintf("mongodb+srv://%s:%s@cluster1.inwzvx7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1", username, password)
+	connectionURI := fmt.Sprintf("mongodb+srv://%s:%s@chat-db.vyumauc.mongodb.net/?retryWrites=true&w=majority&appName=chat-db", username, password)
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -63,7 +63,7 @@ func main() {
 		}
 	}()
 
-	taskCollection = client.Database("todoapp").Collection("tasks")
+	taskCollection = client.Database("todo-db").Collection("todo")
 
 	r := mux.NewRouter()
 
@@ -74,7 +74,7 @@ func main() {
 	r.HandleFunc("/tasks/{id}", deleteTask).Methods("DELETE")
 
 	corsOptions := handlers.CORS(
-		handlers.AllowedOrigins([]string{"http://localhost:3000"}),
+		handlers.AllowedOrigins([]string{"http://localhost:3000", "https://task-it-sand.vercel.app/", "https://task-it-sand.vercel.app/"}),
 		handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"}),
 		handlers.AllowedHeaders([]string{"Content-Type"}),
 	)
