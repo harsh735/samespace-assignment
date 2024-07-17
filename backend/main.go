@@ -67,11 +67,11 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/tasks", createTask).Methods("POST")
-	r.HandleFunc("/tasks", getTasks).Methods("GET")
-	r.HandleFunc("/tasks/{id}", getTask).Methods("GET")
-	r.HandleFunc("/tasks/{id}", updateTask).Methods("PUT")
-	r.HandleFunc("/tasks/{id}", deleteTask).Methods("DELETE")
+	r.HandleFunc("/api/tasks", createTask).Methods("POST")
+	r.HandleFunc("/api/tasks", getTasks).Methods("GET")
+	r.HandleFunc("/api/tasks/{id}", getTask).Methods("GET")
+	r.HandleFunc("/api/tasks/{id}", updateTask).Methods("PUT")
+	r.HandleFunc("/api/tasks/{id}", deleteTask).Methods("DELETE")
 
 	corsOptions := handlers.CORS(
 		handlers.AllowedOrigins([]string{"http://localhost:3000", "https://task-it-sand.vercel.app/", "https://task-it-sand.vercel.app/"}),
