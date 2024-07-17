@@ -15,7 +15,7 @@ const TodoList = () => {
 
     const fetchTodos = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/tasks?user_id=user123&status=${filter.status}&page=${pagination.page}&limit=${pagination.limit}`);
+            const response = await axios.get(`/api/tasks?user_id=user123&status=${filter.status}&page=${pagination.page}&limit=${pagination.limit}`);
             setTodos(response.data);
             console.log("API response", response);
             const totalTodos = parseInt(response.headers['x-total-count']);
